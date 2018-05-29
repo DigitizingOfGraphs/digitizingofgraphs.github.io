@@ -387,6 +387,10 @@ function addPoint() {
                 _result[i - 4] = coordinateChange(getCenter(_points[i]), sc[3], sc[0], sc[1], sc[2]); //push
             }
             return _result;
+        },
+        
+        getPoint: function(_index) {
+            return _points[_index];
         }
     };
 }
@@ -531,8 +535,16 @@ function addPoint() {
         }
     }
     
-    var coord = document.getElementById('coord');
-    var graphImg = document.getElementById('graphImg');
+    document.getElementById('btnUp').addEventListener('click', function(){
+        var shift = +document.getElementById('tbxShift').value;
+        var checkedPointIndex = points.getCheckedPointIndex();
+        if (checkedPointIndex != -1) {
+            var thisPoint = points.getPoint(checkedPointIndex);
+            points.getPoint(checkedPointIndex).style.top = (points.getPoint(checkedPointIndex).offsetTop - shift) + 'px';
+        }
+    });
+    //var coord = document.getElementById('coord');
+    //var graphImg = document.getElementById('graphImg');
     
 
 })();
