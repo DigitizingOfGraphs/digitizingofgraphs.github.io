@@ -543,6 +543,33 @@ function addPoint() {
             points.getPoint(checkedPointIndex).style.top = (points.getPoint(checkedPointIndex).offsetTop - shift) + 'px';
         }
     });
+    
+    document.getElementById('btnDown').addEventListener('click', function(){
+        var shift = +document.getElementById('tbxShift').value;
+        var checkedPointIndex = points.getCheckedPointIndex();
+        if (checkedPointIndex != -1) {
+            var thisPoint = points.getPoint(checkedPointIndex);
+            points.getPoint(checkedPointIndex).style.top = (points.getPoint(checkedPointIndex).offsetTop + shift) + 'px';
+        }
+    });
+    
+    document.getElementById('btnLeft').addEventListener('click', function(){
+        var shift = +document.getElementById('tbxShift').value;
+        var checkedPointIndex = points.getCheckedPointIndex();
+        if (checkedPointIndex != -1) {
+            var thisPoint = points.getPoint(checkedPointIndex);
+            points.getPoint(checkedPointIndex).style.left = (points.getPoint(checkedPointIndex).offsetLeft - shift) + 'px';
+        }
+    });
+    
+    document.getElementById('btnRight').addEventListener('click', function(){
+        var shift = +document.getElementById('tbxShift').value;
+        var checkedPointIndex = points.getCheckedPointIndex();
+        if (checkedPointIndex != -1) {
+            var thisPoint = points.getPoint(checkedPointIndex);
+            points.getPoint(checkedPointIndex).style.left = (points.getPoint(checkedPointIndex).offsetLeft + shift) + 'px';
+        }
+    });
     //var coord = document.getElementById('coord');
     //var graphImg = document.getElementById('graphImg');
     
